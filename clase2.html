@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+
+<body>
+    <h1>Uso de tablas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th >Matrícula</th>
+                <th colspan="2">Nombre</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>12345</td>
+                <td>Ivan </td> <td>Chan</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>23456</td>
+                <td>Benja </td> <td>Barona</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Registrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+
+    <h1>Formularios</h1>
+    <form action="index.html" method="post">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" name="nombreUsuario" placeholder="uwu" value="Ivan Chan" id="nombre"/>
+        
+        <br />
+        <label for="nacimiento">Fecha de nacimiento</label>
+        <input type="date" name="birth" id="nacimiento" value="09/11/2002" required>
+        
+        <br />
+        <label for="carrera">Carrera</label>
+        <select name="carreras" id="carrera">
+            <option selected></option>
+            <option value="1">Ingeniería en Tecnologías de la Información y Negocios Digitales</option>
+            <option value="2">Ingeniería Industrial</option>
+            <option value="3">Ingeniería Ambiental</option>
+            <option value="4">Diseño Grafico</option>
+            <option value="5">Diseño Industrial</option>
+            <option value="6">Arquitectura</option>
+            <option value="7">Gastronomia</option>
+        </select>
+
+        <br />
+        
+        <input type="checkbox" name="TOS" checked required id="terms">
+        <label for="terms">Terminos y condiciones</label>
+
+
+        <br />
+        <br />
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+
+</html>

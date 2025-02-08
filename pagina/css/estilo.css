@@ -22,13 +22,12 @@ header{
     padding: 35px 50px 35px 50px; /* arriba derecha abajo izquierda */
 }
 
-#logo { 
-    /* para id="logos" */
+#logo { /* para id="logos" */
     width: 30%;
     float: left;
     padding: 20px;
+    font-size: 50px;
 }
-
 
 
 nav{
@@ -36,21 +35,22 @@ nav{
     width: 50%;
     border: solid 3px crimson;
     padding: 20px;
-    
 }
 
-a {
+nav a {
     text-decoration: none;
     color: black;
     float: left;
     padding: 15px;
     text-transform: uppercase;
+    font-size: 23px;
+
 }
 
-a:hover {
+nav a:hover {
     background-color: crimson;
     color: white;
-    font-size: larger;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -63,7 +63,7 @@ a:hover {
 }
 
 #slide h1{
-    padding-top: 3px;
+    padding-top: 25px;
     font-size: 45px;
     color: white;
     text-transform: uppercase;
@@ -71,10 +71,11 @@ a:hover {
 }
 
 #slide p{
-    font-size: 18px;
+    font-size: 24px;
     color: white;
     width: 50%;
-    text-shadow: 1px 1px 10px black;
+    text-shadow: 1px 1px 30px black;
+    padding-top: 20px;
 }
 
 main section{
@@ -91,6 +92,13 @@ main section h1{
     font-size: 40px;
     padding-bottom: 20px;
 
+}
+
+main section p{
+    font-size: 25px;
+    width: 55%;
+    float: left;
+    margin-bottom: 30px;
 }
 
 .imagen-derecha{
@@ -110,6 +118,7 @@ main section h1{
     text-align: center;
     float: left;
     margin: 20px;
+    text-decoration: none;
     
     cursor: pointer;
 }

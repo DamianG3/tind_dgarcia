@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JS</title>
+    
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <h1>Contando patos con JS</h1>
+    <button onclick="contarPatos()">Contar pato</button>
+
+    <h2>Validaciones de campos</h2>
+    <input type="email" id="correo_electronico" placeholder="Correo">
+    <div id="error"></div>
+    
+    <input type="number" id="edad" placeholder="0" min="0">
+    <div id="error2"></div>
+
+    <script>
+        correo_electronico.onblur=function(){
+            // .onblur hace que se ejecute este codigo cuando el usuario se enfoca en otra cosa
+            if(!correo_electronico.value.includes('@')){
+                correo_electronico.classList.add('invalido');
+                correo_electronico.classList.remove('valido');
+                error.innerHTML = "Por favor ingresa un correo valido";
+            } 
+            else {
+                correo_electronico.classList.add('valido');
+                correo_electronico.classList.remove('invalido');
+                error.innerHTML = "";
+            }
+        }
+        
+        // el proximo codigo es un pleonasmo
+        correo_electronico.onfocus=function(){
+            if (this.classList.contains('invalido')){
+                this.classList.remove('invalido');
+                error.innerHTML = "";
+            }
+        }
+
+        edad.onblur=function(){
+            if (this.value < 18){
+                error2.innerHTML = "Por favor ingresa una edad valida";
+            } else if (!(Math.round(this.value) == this.value)) {
+                error2.innerHTML = "Por favor ingresa una edad valida";
+            } else {
+                error2.innerHTML = "";
+            }
+        }
+    </script>
+    <style>
+        .invalido{border-color:red;}
+        #error{color:red;}
+        #error2{color:red;}
+        .valido{border-color:black;}
+    </style>
+</body>
+</html>

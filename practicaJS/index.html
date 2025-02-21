@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica con JavaScript</title>
+    <script>
+        console.log("Inicio de pagina");
+        function alClick() {
+            console.log('you clicked');
+            let nombre = prompt('Ingresa tu nombre, por favor')
+            
+            alert("Bienvenido, " + nombre)
+
+            let esQuesoLover = confirm("Te gusta el queso?")
+
+            if (esQuesoLover) {
+                alert("Sí le sabes");
+            } else {
+                alert("No le sabes");
+
+            }
+
+        }
+        
+        function capturarCodigo(){
+            let codigo = document.getElementById("codigo")
+            console.log("Codigo:", codigo);
+            console.log("Codigo:", codigo.value);
+            if (codigo == "abc123") {
+                alert("Le atinaste!!")
+            } else {
+                document.getElementById("codigo").style.border ="solid 1px red"
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="alClick()"> !!!DONT CLICK!!! </button>
+    <hr/>
+    <input type="text" id="codigo"/>
+    <button onclick="capturarCodigo()">Capturar codigo</button>
+
+</body>
+</html>

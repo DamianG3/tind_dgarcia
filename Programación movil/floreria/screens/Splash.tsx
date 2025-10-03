@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 
-export default function Splash({navigation}) {
+export default function Splash({navigation}:any) {
     
     useEffect(() => {
         setTimeout(function() {

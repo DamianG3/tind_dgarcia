@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Text, TextInput, Touchable, TouchableOpacity, View, StyleSheet } from "react-native";
 
-export default function Login({navigation}) {
+export default function Login({navigation}:any) {
     const [correo, setCorreo] = useState('')
     const [password, setPassword] = useState('')
 
 
     const verificarLogin = () => {
-        if (correo === 'admin@gmail.com' && password === '123') {
+        if (correo === 'admin@floreria.com' && password === '123') {
             navigation.replace('Home')
         } else {
             console.log("Error en el acceso");
@@ -16,8 +16,8 @@ export default function Login({navigation}) {
     }
 
     return (
-        <View>
-            <Text>Inicia sesión con tu cuenta :D</Text>
+        <View style={styles.contenedor}>
+            <Text style={styles.titulo}>Inicia sesión con tu cuenta</Text>
 
             <TextInput 
                 onChangeText={setCorreo} 
@@ -34,8 +34,10 @@ export default function Login({navigation}) {
                 
             />
 
-            <TouchableOpacity onPress={verificarLogin}>
-                <Text>Ingresar</Text>
+            <TouchableOpacity 
+            onPress={verificarLogin}
+            style={styles.boton}>
+                <Text style={styles.botonTexto}>Ingresar</Text>
             </TouchableOpacity>
         </View>
     )

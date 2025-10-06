@@ -1,19 +1,22 @@
 import { useEffect } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, StatusBar } from "react-native";
 
 export default function Splash({navigation}:any) {
     
     useEffect(() => {
         setTimeout(function() {
             navigation.replace('Login')
-        }, 1000)
+        }, 2000)
     })
 
 
     return (
+        
         <View style={styles.contenedor}>
+            <StatusBar hidden={true}/>
             <Image source={require('../assets/rose.png')} style={styles.logo}/>
-            <Text style={styles.titulo}>Bienvenidos a Dreaming Flowers</Text>
+            
+            <Text style={styles.titulo}>Dreaming Flowers</Text>
         </View>
     )
 }
@@ -24,12 +27,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#a12424ff'
+        backgroundColor: '#842A3B'
     }, 
     titulo:{
         fontSize: 30,
         fontWeight: "bold",
-        color: "white",
+        color: "#F5DAA7",
         marginBottom: 10
     },
     logo:{

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, FlatList, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Home({ navigation }: any) {
     const [post, setPost] = useState([])
@@ -23,29 +23,33 @@ export default function Home({ navigation }: any) {
 
 
     const RenderPost = ({item}: any) => (
-        <TouchableOpacity style={{margin: 20}}>
-            <Text style={{fontWeight: "bold"}}>{item.title}</Text>
-            <Text numberOfLines={1}>{item.body}</Text>
+        <TouchableOpacity style={styles.contenedorPost}
+        onPress={() => navigation.navigate('Post', {post: item})}
+        >
+            <Text style={styles.tituloPost} numberOfLines={1}>{item.title}</Text>
+            <Text style={styles.descripcionPost} numberOfLines={1}>{item.body}</Text>
         </TouchableOpacity>
     );
 
     if (loading) {
         return (
-            <View>
-                <ActivityIndicator />
-                <Text>Cargando...</Text>
+            <View style={styles.contenedorCargando}>
+                <ActivityIndicator color={'#662222'} style={{marginBottom:11}}/>
+                <Text style={{marginBottom: 25, fontSize:16}}>Cargando...</Text>
             </View>
         )
     }
 
     return (
         <View style={styles.contenedor}>
-            <Text>Lista de post</Text>
+            <StatusBar barStyle='light-content'/>
+            <Text style={styles.titulo}>Posts recientes</Text>
             <FlatList
                 data={post}
                 renderItem={ ({item}) => <RenderPost item={item} /> }
-                // renderItem={ ({item}) => RenderPost(item)}
-                    keyExtractor={item => item["id"]}
+                // renderItem={RenderPost}
+                keyExtractor={item => item["id"]}
+                style={styles.listPost}
             />
 
 
@@ -57,6 +61,39 @@ const styles = StyleSheet.create({
     contenedor:{
         flex: 1,
         padding: 15,
-        backgroundColor: '#ecbebeff'
+        backgroundColor: '#F5DAA7'
+    },
+    titulo:{
+        fontSize:30,
+        fontWeight:'bold',
+        marginBottom:10,
+        marginTop:15,
+    },
+    listPost: {
+        flex: 1
+    },
+    contenedorPost:{
+        backgroundColor:'#842A3B',
+        padding:8,
+        margin:5,
+        borderRadius: 8
+    },
+    tituloPost: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color:'#fff'
+        // marginTop: 10,
+        // borderRadius: 8
+    },
+    descripcionPost: {
+        fontSize: 14,
+        color: '#F5DAA7',
+        marginBottom:3
+    },
+    contenedorCargando:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems:"center",
+        backgroundColor: '#F5DAA7'
     }
 })
